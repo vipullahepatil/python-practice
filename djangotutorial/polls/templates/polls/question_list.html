@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Questions and Answers</title>
+</head>
+<body>
+    <h1>Student Q&A</h1>
+
+    {% for question in questions %}
+        <div style="border: 1px solid #ccc; padding: 10px; margin-bottom: 15px;">
+            <h3>Q: {{ question.title }}</h3>
+            <p><strong>Asked by:</strong> {{ question.created_by.name }}</p>
+            
+            {% for answer in question.answers.all %}
+                <p style="margin-left: 20px;">👉 {{ answer.content }} 
+                    <br><small>– {{ answer.created_by.name }}</small>
+                </p>
+            {% empty %}
+                <p style="margin-left: 20px;">No answers yet.</p>
+            {% endfor %}
+        </div>
+    {% endfor %}
+</body>
+</html>
