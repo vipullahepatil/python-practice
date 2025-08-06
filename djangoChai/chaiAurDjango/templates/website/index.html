@@ -1,22 +1,8 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>{% block title %}Hello , WELCOME TO MY WEBSITE{% endblock %}</title>
-    <link rel = 'stylesheet' href='{% static 'style.css'%}'> 
-</head>
-<body>
-    {% include "website/navbar.html" %}
-    
-    
-    <div class="content">
-        {% block content %}
-        <h1>This is Home Page</h1>
-        <h3>How are you</h3>
-        {% endblock %}
-    </div>
+{% extends "layout.html" %}
+{% block title %}
+Home Page
+{% endblock %}
 
-    {% include "website/footer.html" %}
-</body>
-</html>
+{% block content %}
+<h1>Chai aur code | HOME PAGE</h1>
+{% endblock %}
